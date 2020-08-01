@@ -134,3 +134,25 @@ div.ganttview-progress-bar {
     bottom: 0;
     opacity: 0.4;
 }
+
+#gantt .bar-progress {
+    stroke-width: 1;
+}
+
+.gantt-container .popup-wrapper {
+    min-width: 200px;
+}
+
+.gantt__popup-title {
+    color: #dedede;
+
+}
+
+.gantt__popup-title:hover {
+    color: white;
+
+}
+
+.gantt-container .task-closed .bar-label {
+    text-decoration: line-through; 
+}

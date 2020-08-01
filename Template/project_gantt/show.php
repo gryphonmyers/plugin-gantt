@@ -25,18 +25,11 @@
         <?php if (empty($projects)): ?>
             <p class="alert"><?= t('No project') ?></p>
         <?php else: ?>
-            <div
-                id="gantt-chart"
-                data-records='<?= json_encode($projects, JSON_HEX_APOS) ?>'
-                data-save-url="<?= $this->url->href('ProjectGanttController', 'save', array('plugin' => 'Gantt')) ?>"
-                data-label-project-manager="<?= t('Project managers') ?>"
-                data-label-project-member="<?= t('Project members') ?>"
-                data-label-gantt-link="<?= t('Gantt chart for this project') ?>"
-                data-label-board-link="<?= t('Project board') ?>"
-                data-label-start-date="<?= t('Start date:') ?>"
-                data-label-end-date="<?= t('End date:') ?>"
-                data-label-not-defined="<?= t('There is no start date or end date for this project.') ?>"
-            ></div>
+            <svg 
+                id="gantt"
+                data-save-url="<?= $this->url->href('TaskGanttController', 'save', array('project_id' => $project['id'], 'plugin' => 'Gantt')) ?>"
+                data-records='<?= json_encode($tasks, JSON_HEX_APOS) ?>'
+            ></svg>
         <?php endif ?>
     </section>
 </section>
